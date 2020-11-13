@@ -1,4 +1,4 @@
-# lh-eslint-config
+# eslint-configuration-lukahartridge
 
 Eslint configration
 
@@ -23,13 +23,19 @@ Add the following to your `package.json`
 ```json
 {
   "scripts": {
-    "lint": "eslint src/**/*.js",
+    "lint": "eslint \"lib/*.js\"",
+    "lint:fix": "eslint --fix \"lib/*.js\"",
     "lint:show-unused-directives": "npm run lint -- --report-unused-disable-directives"
-  },
-  "eslintConfig": {
-    "extends": "eslint-config-lukahartridge"
   }
 }
+```
+
+Add a `.eslintrc.js` file
+
+```js
+module.exports = {
+  extends: ['lukahartridge'],
+};
 ```
 
 [![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](http://standardjs.com)
